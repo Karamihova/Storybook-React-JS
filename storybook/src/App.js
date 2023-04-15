@@ -10,9 +10,8 @@ function App() {
         </div>
         <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
           <li><a href="#" className="nav-link px-2 link-secondary">Home</a></li>
-          <li><a href="#" className="nav-link px-2">Features</a></li>
-          <li><a href="#" className="nav-link px-2">Pricing</a></li>
-          <li><a href="#" className="nav-link px-2">FAQs</a></li>
+          <li><a href="#" className="nav-link px-2">Stories</a></li>
+          <li><a href="#" className="nav-link px-2">Reviews</a></li>
           <li><a href="#" className="nav-link px-2">About</a></li>
         </ul>
         <div className="col-md-3 text-end">
@@ -27,9 +26,9 @@ function App() {
       <main className="container">
       <div className="p-4 p-md-5 mb-4 rounded text-bg-dark">
         <div className="col-md-6 px-0">
-          <h1 className="display-4 fst-italic">Title of a longer featured blog post</h1>
-          <p className="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-          <p className="lead mb-0"><a href="#" className="text-white fw-bold">Continue reading...</a></p>
+          <h1 className="display-4 fst-italic">Welcome to Storybook!</h1>
+          <p className="lead my-3">A free website where you can write, read and review stories.</p>
+          <p className="lead mb-0"><a href="#" className="text-white fw-bold">Learn more...</a></p>
         </div>
     </div>
       </main>
@@ -37,13 +36,8 @@ function App() {
       {/* About */}
       <div className="container">
         <div className="col-md-8">
-        <h3 className="pb-4 mb-4 fst-italic border-bottom">
-          From the Firehose
-        </h3>
         <article className="blog-post">
-          <h2 className="blog-post-title mb-1">Sample blog post</h2>
-          <p className="blog-post-meta">January 1, 2021 by <a href="#">Mark</a></p>
-
+          <h2 className="blog-post-title mb-1">Who we are</h2>
           <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, lists, tables, images, code, and more are all supported as expected.</p>
           <hr/>
           <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
@@ -61,7 +55,7 @@ function App() {
       {/* Stories Collection */}
       <div className="container">
           <h3 className="pb-4 mb-4 fst-italic border-bottom">
-            From the Firehose
+            Popular Stories
           </h3>
             <div className="row mb-2">
 
@@ -130,14 +124,13 @@ function App() {
 
       {/* Table */}
       <div className="container">
-      <h3>Example table</h3>
-        <p>And don't forget about tables in these posts:</p>
+      <h3>Popular Stories</h3>
         <table className="table">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Upvotes</th>
-              <th>Downvotes</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Likes</th>
             </tr>
           </thead>
           <tbody>
@@ -171,7 +164,7 @@ function App() {
 
       <div className="container">
 
-      
+      <h3 className="text-center">Sign in</h3>
         <form>
           <div className="form-outline mb-4 text-center">
             <input type="email" id="form2Example1" className="form-control text-center" />
@@ -223,34 +216,34 @@ function App() {
 
       <div className="container">
       <form>
-        <div className="form-group">
-          <label htmlFor="exampleFormControlInput1">Email address</label>
-          <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+        <div className="form-group pb-2">
+          <label htmlFor="exampleFormControlInput1">Title</label>
+          <input type="email" className="form-control" id="exampleFormControlInput1" />
         </div>
-        <div className="form-group">
-          <label htmlFor="exampleFormControlSelect1">Example select</label>
+        <div className="form-group pb-2">
+          <label htmlFor="exampleFormControlInput1">Cover</label>
+          <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Image URL" />
+        </div>
+        <div className="form-group pb-2">
+          <label htmlFor="exampleFormControlSelect1">Category</label>
           <select className="form-control" id="exampleFormControlSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option>Novel</option>
+            <option>Romance</option>
+            <option>Thriller</option>
+            <option>Pscycology</option>
+            <option>Lifestyle</option>
           </select>
         </div>
-        <div className="form-group">
-          <label htmlFor="exampleFormControlSelect2">Example multiple select</label>
-          <select multiple className="form-control" id="exampleFormControlSelect2">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
+        <div className="form-group pb-2">
+          <label htmlFor="exampleFormControlTextarea1">Summary</label>
+          <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="What your story is about..."></textarea>
         </div>
-        <div className="form-group">
-          <label htmlFor="exampleFormControlTextarea1">Example textarea</label>
-          <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <div className="form-group pb-2">
+          <label htmlFor="exampleFormControlTextarea1">Story text</label>
+          <textarea className="form-control pb-2" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
+        <button type="button" className="btn btn-primary btn-block mb-4 mt-2">Post story</button>
+        
       </form>
       </div>
 
@@ -261,11 +254,12 @@ function App() {
             <img src="bootstrap-themes.png" className="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy" />
           </div>
           <div className="col-lg-6">
-            <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3">Responsive left-aligned hero with image</h1>
-            <p className="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+            <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3">Title</h1>
+            <h2 className="display-8 fw-bold text-body-emphasis lh-1 mb-3">Author</h2>
+            <p className="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-              <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
-              <button type="button" className="btn btn-outline-secondary btn-lg px-4">Default</button>
+              <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">Like</button>
+              <button type="button" className="btn btn-outline-secondary btn-lg px-4">Review</button>
             </div>
           </div>
         </div>
