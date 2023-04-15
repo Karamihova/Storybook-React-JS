@@ -169,55 +169,108 @@ function App() {
 
       {/* Sign in */}
 
+      <div className="container">
+
       
-      <form>
-        <div className="form-outline mb-4">
-          <input type="email" id="form2Example1" className="form-control" />
-          <label className="form-label" htmlFor="form2Example1">Email address</label>
-        </div>
+        <form>
+          <div className="form-outline mb-4 text-center">
+            <input type="email" id="form2Example1" className="form-control text-center" />
+            <label className="form-label text-center" htmlFor="form2Example1">Email address</label>
+          </div>
 
-        <div className="form-outline mb-4">
-          <input type="password" id="form2Example2" className="form-control" />
-          <label className="form-label" htmlFor="form2Example2">Password</label>
-        </div>
+          <div className="form-outline mb-4 text-center">
+            <input type="password" id="form2Example2" className="form-control text-center" />
+            <label className="form-label text-center" htmlFor="form2Example2">Password</label>
+          </div>
 
-        <div className="row mb-4">
-          <div className="col d-flex justify-content-center">
-            <div className="form-check">
-              <input className="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-              <label className="form-check-label" htmlFor="form2Example31"> Remember me </label>
+          <div className="row mb-4 text-center">
+            <div className="col d-flex justify-content-center">
+              <div className="form-check">
+                <input className="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                <label className="form-check-label" htmlFor="form2Example31"> Remember me </label>
+              </div>
+            </div>
+
+            <div className="col">
+              <a href="#!">Forgot password?</a>
             </div>
           </div>
 
-          <div className="col">
-            <a href="#!">Forgot password?</a>
+          <div className="text-center">
+            <button type="button" className="btn btn-primary btn-block mb-4">Sign in</button>
+            <p>Not a member? <a href="#!">Register</a></p>
+            <p>or sign up with:</p>
+            <button type="button" className="btn btn-link btn-floating mx-1">
+              <i className="fab fa-facebook-f"></i>
+            </button>
+
+            <button type="button" className="btn btn-link btn-floating mx-1">
+              <i className="fab fa-google"></i>
+            </button>
+
+            <button type="button" className="btn btn-link btn-floating mx-1">
+              <i className="fab fa-twitter"></i>
+            </button>
+
+            <button type="button" className="btn btn-link btn-floating mx-1">
+              <i className="fab fa-github"></i>
+            </button>
           </div>
+        </form>
+      </div>
+
+      {/* Add Form */}
+
+      <div className="container">
+      <form>
+        <div className="form-group">
+          <label htmlFor="exampleFormControlInput1">Email address</label>
+          <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
         </div>
-
-        <button type="button" className="btn btn-primary btn-block mb-4">Sign in</button>
-
-        <div className="text-center">
-          <p>Not a member? <a href="#!">Register</a></p>
-          <p>or sign up with:</p>
-          <button type="button" className="btn btn-link btn-floating mx-1">
-            <i className="fab fa-facebook-f"></i>
-          </button>
-
-          <button type="button" className="btn btn-link btn-floating mx-1">
-            <i className="fab fa-google"></i>
-          </button>
-
-          <button type="button" className="btn btn-link btn-floating mx-1">
-            <i className="fab fa-twitter"></i>
-          </button>
-
-          <button type="button" className="btn btn-link btn-floating mx-1">
-            <i className="fab fa-github"></i>
-          </button>
+        <div className="form-group">
+          <label htmlFor="exampleFormControlSelect1">Example select</label>
+          <select className="form-control" id="exampleFormControlSelect1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <label htmlFor="exampleFormControlSelect2">Example multiple select</label>
+          <select multiple className="form-control" id="exampleFormControlSelect2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <label htmlFor="exampleFormControlTextarea1">Example textarea</label>
+          <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
       </form>
-      
+      </div>
 
+      {/* Details */}
+      <div className="container col-xxl-8 px-4 py-5">
+        <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div className="col-10 col-sm-8 col-lg-6">
+            <img src="bootstrap-themes.png" className="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy" />
+          </div>
+          <div className="col-lg-6">
+            <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3">Responsive left-aligned hero with image</h1>
+            <p className="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+            <div className="d-grid gap-2 d-md-flex justify-content-md-start">
+              <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
+              <button type="button" className="btn btn-outline-secondary btn-lg px-4">Default</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       {/* Footer */}
 
       <div className="container">
