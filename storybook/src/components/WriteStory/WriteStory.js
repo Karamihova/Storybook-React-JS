@@ -49,7 +49,7 @@ export const WriteStory = ({
                 <label htmlFor="exampleFormControlTextarea1">Story text</label>
                 <textarea value={values.text} onChange={onChangeHandler} className="form-control pb-2" name="text" id="exampleFormControlTextarea2" rows="6" placeholder="Your story goes here..."></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary btn-block mb-4 mt-2">Post story</button>
+                <button type="submit" className="btn btn-primary btn-block mb-4 mt-2">Post Story</button>
                 
             </form>
             </div>
