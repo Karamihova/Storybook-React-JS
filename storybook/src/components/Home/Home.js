@@ -1,4 +1,4 @@
-import { Story } from "../Story/Story";
+import { Story } from "../Stories/Story/Story";
 
 export const Home = () => {
     return(

@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react';
 import {Routes, Route} from 'react-router-dom';
 
+import * as gameService from './services/storyService';
+
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { Home } from "./components/Home/Home";
@@ -15,8 +17,15 @@ function App() {
   const [stories, setStories] = useState([]);
 
   useEffect(() => {
-    
+    gameService.getAll()
+      .then(result => {
+        setStories(result)
+      })
   }, []);
+
+  const onWriteStorySubmit = (data) => {
+
+  }
 
   return (
     <>
@@ -25,7 +34,7 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home/>} />
-        <Route path='/stories' element={<Stories/>} />
+        <Route path='/stories' element={<Stories stories={stories} />} />
         <Route path='/table' element={<Table/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register/>} />
