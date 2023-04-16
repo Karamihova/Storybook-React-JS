@@ -1,4 +1,7 @@
+import {Link} from 'react-router-dom';
+
 export const Story = ({
+    _id,
     title,
     author,
     category,
@@ -13,7 +16,7 @@ export const Story = ({
                             <h3 className="mb-0">{title}</h3>
                             <div className="mb-1 text-body-secondary">{author}</div>
                             <p className="card-text mb-auto">{summary}</p>
-                            <a href="#" className="stretched-link">Continue reading</a>
+                            <Link to={`/stories/${_id}`} className="stretched-link">Continue reading</Link>
                         </div>
                         <div className="col-auto d-none d-lg-block">
                             <img className="bd-placeholder-img" src={imageUrl} width="200" height="250" />

@@ -13,3 +13,8 @@ export const create = async (storyData) => {
 
      return result;
 };
+
+export const getOne = async (storyId) => {
+     const result = await request.get(`${baseUrl}/${storyId}`);
+     return result;
+};
