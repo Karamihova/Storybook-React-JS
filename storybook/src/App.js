@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
-import {Routes, Route} from 'react-router-dom';
+import {Routes, Route, useNavigate} from 'react-router-dom';
 
-import * as gameService from './services/storyService';
+import * as storyService from './services/storyService';
 
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
@@ -15,17 +15,24 @@ import { WriteStory } from "./components/WriteStory/WriteStory";
 
 function App() {
   const [stories, setStories] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    gameService.getAll()
+    storyService.getAll()
       .then(result => {
         setStories(result)
       })
   }, []);
 
-  const onWriteStorySubmit = (data) => {
+  const onWriteStorySubmit = async (data) => {
+    console.log(data);
+    const newStory = await storyService.create(data);
 
-  }
+    // TODO: add to state
+    setStories(state => [...state, newStory]);
+    //TODO: redirect to Stories
+    navigate('/stories');
+  };
 
   return (
     <>
@@ -38,8 +45,8 @@ function App() {
         <Route path='/table' element={<Table/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register/>} />
-        <Route path='/write-story' element={<WriteStory/>} />
-        <Route path='/story-details' element={<StoryDetails/>} />
+        <Route path='/write-story' element={<WriteStory onWriteStorySubmit={onWriteStorySubmit} />} />
+        <Route path='/stories/:storyId' element={<StoryDetails/>} />
       </Routes>
 
       <Footer/>

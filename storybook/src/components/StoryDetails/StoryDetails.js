@@ -10,7 +10,7 @@ export const StoryDetails = () => {
             <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
                 <button type="button" className="btn btn-primary btn-lg px-4 gap-3">Like</button>
                 <button type="button" className="btn btn-outline-secondary btn-lg px-4">Review</button>
-                <button type="button" className="btn btn-outline-secondary btn-lg px-4">Reviews</button>
+                <button type="button" className="btn btn-outline-secondary btn-lg px-4">Add to Reading List</button>
             </div>
             </div>
         </div>
