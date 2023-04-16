@@ -1,3 +1,6 @@
+import {useState, useEffect} from 'react';
+import {Routes, Route} from 'react-router-dom';
+
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { Home } from "./components/Home/Home";
@@ -9,17 +12,27 @@ import { Table } from "./components/Table/Table";
 import { WriteStory } from "./components/WriteStory/WriteStory";
 
 function App() {
+  const [stories, setStories] = useState([]);
+
+  useEffect(() => {
+    
+  }, []);
+
   return (
     <>
-      
+
       <Header/>
-      <Home/>
-      <Stories/>
-      <Table/>
-      <Login/>
-      <Register/>
-      <WriteStory/>
-      <StoryDetails/>
+
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/stories' element={<Stories/>} />
+        <Route path='/table' element={<Table/>} />
+        <Route path='/login' element={<Login/>} />
+        <Route path='/register' element={<Register/>} />
+        <Route path='/write-story' element={<WriteStory/>} />
+        <Route path='/story-details' element={<StoryDetails/>} />
+      </Routes>
+
       <Footer/>
 
     </>
