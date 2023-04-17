@@ -1,6 +1,5 @@
 import {useParams} from 'react-router-dom';
 import * as storyService from '../../services/storyService';
-import * as reviewService from '../../services/reviewService';
 import { useEffect, useState } from 'react';
 
 export const StoryDetails = () => {
@@ -8,7 +7,6 @@ export const StoryDetails = () => {
     const [username, setUsername] = useState('');
     const [review, setReview] = useState('');
     const [rating, setRating] = useState('');
-    const [reviews, setReviews] = useState([]);
 
     const [story, setStory] = useState({});
 
@@ -17,24 +15,21 @@ export const StoryDetails = () => {
     useEffect(() => {
         storyService.getOne(storyId)
             .then(result => {
+                console.log(result);
                 setStory(result);
-                return reviewService.getAll(storyId);
             })
-            .then(result => {
-                setReviews(result);
-            });       
     }, [storyId]);
 
     const onReviewSubmit = async (e) => {
         e.preventDefault();
 
-        await reviewService.write({
-            storyId,
+        const result = await storyService.addReview(storyId, {
             username,
             review,
             rating
         });
 
+        setStory(state => ({...state, reviews: {...state.reviews, [result._id]: result}}))
         setUsername('');
         setReview('');
         setRating('');
@@ -87,9 +82,9 @@ export const StoryDetails = () => {
             {/* Reviews Collection */}
             <div className="container">
                 <div className="my-3 p-3 bg-body rounded shadow-sm">
-                        <h6 className="border-bottom pb-2 mb-0">Recent updates</h6>
+                        <h3 className="border-bottom pb-2 mb-0">Recent Reviews</h3>
                         
-                        {reviews.map(x => (
+                        {story.reviews && Object.values(story.reviews).map(x => (
                             <div key={x._id} className="d-flex text-body-secondary pt-3">
                             <p className="pb-3 mb-0 small lh-sm border-bottom">
                                 <strong className="d-block text-gray-dark">@{x.username}</strong>
@@ -100,16 +95,10 @@ export const StoryDetails = () => {
                             </div>
                         ))}
 
-                        {reviews.length === 0 && (
+                        {/* {!Object.values(story.reviews).length && (
                             <h2>There are no reviews yet</h2>
-                        )}
+                        )} */}
 
-                        {/* <div className="d-flex text-body-secondary pt-3">
-                        <p className="pb-3 mb-0 small lh-sm border-bottom">
-                            <strong className="d-block text-gray-dark">@username</strong>
-                            <strong>5 Stars</strong> - Some more representative placeholder content, related to this other user. Another status update, perhaps.
-                        </p>
-                        </div> */}
                 </div>
             </div>
         </>

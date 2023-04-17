@@ -19,7 +19,7 @@ export const Story = ({
                             <Link to={`/stories/${_id}`} className="stretched-link">Continue reading</Link>
                         </div>
                         <div className="col-auto d-none d-lg-block">
-                            <img className="bd-placeholder-img" src={imageUrl} width="200" height="250" />
+                            <img className="bd-placeholder-img" src={imageUrl} width="200" height="300" />
                         </div>
                         </div>
                     </div>
