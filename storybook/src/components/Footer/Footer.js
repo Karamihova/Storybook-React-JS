@@ -10,9 +10,9 @@ export const Footer = () =>{
             </div>
 
             <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li className="ms-3"><a className="text-body-secondary" href="#"><i class="fab fa-twitter fa-2x" /></a></li>
-                <li className="ms-3"><a className="text-body-secondary" href="#"><i class="fab fa-facebook-square fa-2x" /></a></li>
-                <li className="ms-3"><a className="text-body-secondary" href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+                <li className="ms-3"><a className="text-body-secondary" href="#"><i className="fab fa-twitter fa-2x" /></a></li>
+                <li className="ms-3"><a className="text-body-secondary" href="#"><i className="fab fa-facebook-square fa-2x" /></a></li>
+                <li className="ms-3"><a className="text-body-secondary" href="#"><i className="fab fa-instagram fa-2x"></i></a></li>
             </ul>
             </footer> 
       </div>
