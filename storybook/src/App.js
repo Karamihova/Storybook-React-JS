@@ -35,20 +35,30 @@ function App() {
     navigate('/stories');
   };
 
-  const onLoginSubmit = (data) => {
+  const onLoginSubmit = async (data) => {
     const {email, password} = data;
-    authService.login(email, password)
-               .then(token => {
-                 setAuth(token);
-                 navigate('/');
-               })
-               .catch((error => {
-                console.log("problem");
-               }));
+    try {
+      const result = await authService.login(email, password);
+      setAuth(result);
+      navigate('/');
+    } catch (error) {
+      console.log('problem!!!')
+    }
   };
 
+  const onRegisterSubmit = async (data) => {
+    const {email, password, rePassword} = data;
+    try {
+      const result = await authService.register(email, password, rePassword);
+      setAuth(result);
+      navigate('/');
+    } catch (error) {
+      console.log('problem!!!')
+    }
+  }
+
   return (
-    <AuthContext.Provider value={{onLoginSubmit, isAuthenticated: !!auth.accessToken}}>
+    <AuthContext.Provider value={{onLoginSubmit, onRegisterSubmit, isAuthenticated: auth.accessToken ? true : false}}>
       <>
 
       <Header/>
