@@ -22,7 +22,7 @@ export const StoryDetails = () => {
 
     const onReviewSubmit = async (e) => {
         e.preventDefault();
-
+        //github
         const result = await storyService.addReview(storyId, {
             username,
             review,
